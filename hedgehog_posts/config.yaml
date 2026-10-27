@@ -1,0 +1,35 @@
+brand:
+  footer: "Quiamo.com"
+
+# Shared by every prompt so the hedgehog always looks the same.
+character: >-
+  a very cute chubby round hedgehog with a cream-colored face and belly, soft
+  brown spiky quills drawn with fine ink lines, gently closed happy eyes, a tiny
+  black button nose, rosy pink blush cheeks, a small round ear and little pink paws
+
+style: >-
+  Soft watercolor and colored-pencil children's storybook illustration, pastel
+  palette, visible paper texture, warm, calm and sweet mood
+
+# Per-format composition. The quote is drawn by the program (not by Gemini) so
+# the spelling is always right; the prompt only reserves empty sky for it.
+formats:
+  portrait_3x4:
+    aspect_ratio: "3:4"
+    composition: >-
+      The hedgehog and scene occupy the bottom 55% of the image; the top 45% is
+      open pale blue-to-cream sky with a few soft clouds (or, for indoor scenes,
+      a soft plain cream wall) with plenty of empty space.
+  story_9x16:
+    aspect_ratio: "9:16"
+    composition: >-
+      Tall vertical frame. The hedgehog and scene occupy the bottom half of the
+      image, kept away from the very bottom edge; the top half is open pale
+      blue-to-cream sky with a few soft clouds (or, for indoor scenes, a soft
+      plain cream wall) with plenty of empty space.
+
+# Posting window, India time. One slot is picked per day, never the same as
+# the day before.
+schedule:
+  timezone: "Asia/Kolkata"
+  slots: ["08:10", "08:15", "08:20", "08:25", "08:30", "08:35", "08:40", "08:45"]

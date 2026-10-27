@@ -1,0 +1,392 @@
+# Daily hedgehog quote queue. Posts go out in this order, one per day, then loop.
+#
+#   quote       - text printed on the image. Wrap phrases in [square brackets]
+#                 to give them a brush-stroke highlight (yellow, pink, blue...).
+#   pose        - what the hedgehog is doing (sent to Gemini).
+#   background  - the scene behind him (sent to Gemini).
+#   linkedin /  - hook (first line, what shows before "see more"), body, and
+#   instagram     at most 5 hashtags (without the #).
+#
+# The character and art style live in config.yaml so every image shows the
+# same hedgehog. "Quiamo.com" is added to the image and to every caption.
+
+quotes:
+  - id: own-garden
+    quote: "Comparison steals the joy from [your own garden]."
+    pose: "kneels happily, watering a tiny sprout with a small watering can, smiling contentedly and not looking over the fence"
+    background: "his own small vegetable patch with carrots, little cabbages and tomato plants, a low wooden picket fence, wildflowers, soft rolling pastel hills"
+    linkedin:
+      hook: "I stopped checking what my peers were posting for 30 days. My work got better."
+      body: |-
+        Every scroll was a quiet scoreboard: their promotion, their launch, their raise.
+
+        None of it changed my results. It only changed my mood.
+
+        What helped:
+        • Measure yourself against last month's you
+        • Celebrate a peer's win, then close the tab
+        • Spend that energy on the one thing only you can grow
+
+        Your garden needs your attention, not your neighbour's fence.
+      hashtags: ["Mindset", "PersonalGrowth", "CareerGrowth", "MentalHealth", "Leadership"]
+    instagram:
+      hook: "Stop watering your neighbour's garden with your attention 🌱"
+      body: |-
+        Their bloom is not your delay.
+        Look down. Your sprout is growing too.
+
+        Save this for the next time the scroll makes you feel behind 💛
+      hashtags: ["selflove", "mindset", "comparison", "mentalhealth", "positivevibes"]
+
+  - id: rest-not-quitting
+    quote: "[Rest is not quitting]. It's how you [keep going]."
+    pose: "naps peacefully on his back, tiny smile, little paws resting on his belly"
+    background: "a hammock made from a big green leaf strung between two tall sunflowers in a sunny meadow with daisies and a blue butterfly"
+    linkedin:
+      hook: "The most productive thing I did last week was nothing."
+      body: |-
+        We treat rest like a reward we have to earn. It's really part of the work.
+
+        Tired minds make expensive decisions. Rested ones see what's actually there.
+
+        If your team only slows down when they're burned out, you don't have a performance problem. You have a pace problem.
+
+        Leaders: say "take the afternoon" out loud. It gives everyone else permission.
+      hashtags: ["Burnout", "WorkLifeBalance", "Leadership", "MentalHealth", "Productivity"]
+    instagram:
+      hook: "Read this if you feel guilty for resting 😴"
+      body: |-
+        You are not falling behind.
+        You are recharging so you can keep going.
+
+        Send this to the friend who never takes a break 💛
+      hashtags: ["selfcare", "rest", "mentalhealth", "burnout", "selflove"]
+
+  - id: lighter-work
+    quote: "Good managers don't make people work harder. They make [work feel lighter]."
+    pose: "walks in front holding up the heavy front end of a big acorn above his head with both paws, sharing the load with three smaller cute hedgehogs who hold up the back end; all four are carrying it together and smiling"
+    background: "a sunny woodland path with mushrooms, ferns, fallen autumn leaves and soft trees"
+    linkedin:
+      hook: "People don't leave heavy work. They leave heavy managers."
+      body: |-
+        The best manager I ever had didn't reduce our workload. She removed the weight around it:
+
+        • Clear priorities, so we never guessed
+        • Blockers cleared within a day
+        • Credit given loudly, blame absorbed quietly
+
+        Same deadlines. Half the stress.
+
+        Who made work feel lighter for you? Tag them 👇
+      hashtags: ["Leadership", "Management", "WorkplaceCulture", "TeamWork", "EmployeeExperience"]
+    instagram:
+      hook: "Tag the boss who made Mondays feel lighter 🌰"
+      body: |-
+        Great leaders don't add pressure.
+        They pick up one end of the load.
+
+        Share this with your team 💛
+      hashtags: ["leadership", "teamwork", "worklife", "corporatelife", "motivation"]
+
+  - id: keep-the-person
+    quote: "You don't have to [win the argument] to [keep the person]."
+    pose: "stands close beside a second cute hedgehog, both sharing one small umbrella and smiling at each other"
+    background: "a cobbled village lane in gentle spring rain, puddles reflecting flowers, cosy cottage windows glowing"
+    linkedin:
+      hook: "I won the argument. I lost the collaborator."
+      body: |-
+        It took me years to see the trade I was making.
+
+        Being right felt good for an hour. Rebuilding trust took months.
+
+        Now before a hard conversation I ask one question: "Do I want to win, or do I want this to work?"
+
+        Clients, co-founders, teammates: the relationship is usually worth more than the point.
+      hashtags: ["EmotionalIntelligence", "Leadership", "Communication", "Relationships", "Collaboration"]
+    instagram:
+      hook: "Being right isn't worth losing them ☔"
+      body: |-
+        Some arguments are won by letting go.
+        Choose the person over the point.
+
+        Tag someone you'd share your umbrella with 💛
+      hashtags: ["relationships", "love", "relationshipgoals", "kindness", "healing"]
+
+  - id: empty-mug
+    quote: "You can't pour from an [empty mug]. [Refill yourself first]."
+    pose: "sits at a little table, eyes closed and smiling, pouring tea from a teapot into his own polka-dot mug"
+    background: "a sunny cottage kitchen in the morning, window with potted herbs, gingham tablecloth, soft light"
+    linkedin:
+      hook: "You can't lead a team on an empty tank."
+      body: |-
+        The managers I've seen burn out all said the same thing: "I'll take care of myself after this quarter."
+
+        There's always another quarter.
+
+        Refilling isn't selfish. It's maintenance:
+        • Protect one block of your calendar for you
+        • Sleep before strategy
+        • Let someone else hold the pot for a day
+
+        Your team gets the version of you that you leave for them.
+      hashtags: ["SelfCare", "Leadership", "Burnout", "MentalHealth", "WorkLifeBalance"]
+    instagram:
+      hook: "You keep pouring. Who's refilling you? ☕"
+      body: |-
+        Taking care of yourself is not selfish.
+        It's how you keep showing up for the people you love.
+
+        Make your tea first today 💛
+      hashtags: ["selfcare", "selflove", "mentalhealth", "metime", "wellness"]
+
+  - id: love-quietly
+    quote: "Some people [love you quietly]. Learn to [hear it]."
+    pose: "reads a small book by a window while a second cute hedgehog gently sets a warm mug beside him; he smiles softly"
+    background: "a cosy window nook with cushions, a knitted blanket, rain-speckled glass and a garden outside"
+    linkedin:
+      hook: "The colleague who never says 'great job' might be the one who covers for you every time."
+      body: |-
+        Not everyone shows support out loud.
+
+        Some people show it by:
+        • Reviewing your work before it goes out
+        • Saving you a seat in the meeting
+        • Quietly sending you the opportunity first
+
+        Notice them. Thank them. Quiet support is still support.
+      hashtags: ["Gratitude", "WorkplaceCulture", "Relationships", "EmotionalIntelligence", "Kindness"]
+    instagram:
+      hook: "Not all love is loud 🫖"
+      body: |-
+        Sometimes it's a warm cup you didn't ask for.
+        A text that says "reached home?"
+        A seat saved just for you.
+
+        Tag someone who loves you quietly 💛
+      hashtags: ["love", "relationships", "gratitude", "lovequotes", "kindness"]
+
+  - id: praise-correct-care
+    quote: "[Praise in public]. [Correct in private]. [Care always]."
+    pose: "holds a tiny clipboard under one arm and kindly hands a daisy to a smaller smiling hedgehog teammate"
+    background: "a sunny meadow office: a tree-stump desk, a little chalkboard, wildflowers and bunting"
+    linkedin:
+      hook: "The 6-word management rule I wish I'd learned in my first year."
+      body: |-
+        Praise in public. Correct in private. Care always.
+
+        Public praise builds confidence across the whole team.
+        Private correction protects dignity, and people actually listen.
+        Care is what makes both of them land.
+
+        Skip the third part and the first two feel like tactics.
+
+        Save this for your next 1:1.
+      hashtags: ["Leadership", "Management", "PeopleManagement", "Feedback", "WorkplaceCulture"]
+    instagram:
+      hook: "Every manager needs to read this 🌼"
+      body: |-
+        Praise loudly.
+        Correct gently.
+        Care always.
+
+        Share it with a leader who gets it right 💛
+      hashtags: ["leadership", "manager", "worklife", "teamwork", "motivation"]
+
+  - id: seat-at-table
+    quote: "Not every thought deserves a [seat at your table]."
+    pose: "sits calmly at a tiny picnic table, gently waving away three small grey worry-clouds with one paw, peaceful smile"
+    background: "a peaceful garden picnic spot with a checked cloth, a teacup, lavender and soft hills"
+    linkedin:
+      hook: "Your 2 a.m. thoughts are not your board of directors."
+      body: |-
+        "What if the launch fails?"
+        "What if they think I'm not good enough?"
+
+        Some thoughts deserve a meeting. Most deserve a polite "not today."
+
+        Try this: write the worry down, ask "Can I act on this today?" If not, it doesn't get a seat yet.
+
+        Clear head, better decisions.
+      hashtags: ["MentalHealth", "Mindfulness", "Anxiety", "Leadership", "Productivity"]
+    instagram:
+      hook: "Overthinker? This one's for you ☁️"
+      body: |-
+        You don't have to entertain every worry that knocks.
+        Wave it on. Pour your tea. Breathe.
+
+        Save this for the next 2 a.m. spiral 💛
+      hashtags: ["overthinking", "anxiety", "mentalhealth", "mindfulness", "peace"]
+
+  - id: room-to-grow
+    quote: "Distance isn't always goodbye. Sometimes it's just [room to grow]."
+    pose: "sits on a lily pad waving warmly at a second cute hedgehog on another lily pad drifting slightly apart, both smiling"
+    background: "a calm pond with lotus flowers, dragonflies and soft reflections"
+    linkedin:
+      hook: "My best mentor told me to leave her team. It was the kindest thing she ever did."
+      body: |-
+        Letting people go to a bigger role, a new city or a different path feels like loss.
+
+        It's often a sign that you did your job well.
+
+        The best leaders build people who outgrow them, then stay in touch.
+
+        Who did you have to let go so they could grow?
+      hashtags: ["Mentorship", "Leadership", "CareerGrowth", "Relationships", "PersonalGrowth"]
+    instagram:
+      hook: "If you're drifting from someone you love, read this 🪷"
+      body: |-
+        Not every distance is an ending.
+        Sometimes two people just need room to bloom.
+
+        Send this to someone far away but close to your heart 💛
+      hashtags: ["relationships", "friendship", "growth", "healing", "love"]
+
+  - id: kindness-who-you-are
+    quote: "Your title is what you do. [Your kindness] is [who you are]."
+    pose: "sits at a tiny wooden desk wearing a small tie, kindly handing a warm cup of cocoa to a tired smaller hedgehog colleague"
+    background: "a cosy little office inside a tree trunk with a laptop, a potted plant and warm window light"
+    linkedin:
+      hook: "No one at your farewell will mention your job title."
+      body: |-
+        They'll remember:
+        • Who covered for them on a bad day
+        • Who explained things without making them feel small
+        • Who asked "how are you, really?"
+
+        Titles change every few years. How you treat people follows you forever.
+
+        Be the colleague someone talks about long after you've left.
+      hashtags: ["Kindness", "Leadership", "WorkplaceCulture", "CareerAdvice", "EmotionalIntelligence"]
+    instagram:
+      hook: "Your title will change. This won't 🦔"
+      body: |-
+        Be the kind of person people feel safe around.
+        That's the real promotion.
+
+        Tag the kindest person at your work 💛
+      hashtags: ["kindness", "worklife", "corporatelife", "goodvibes", "motivation"]
+
+  - id: slow-progress
+    quote: "[Slow progress] is still [progress]."
+    pose: "walks steadily along a path wearing a tiny backpack, smiling, beside a friendly snail companion"
+    background: "a winding forest path with ferns, mushrooms, dappled sunlight and a distant hill"
+    linkedin:
+      hook: "1% better every day doesn't look like much on Tuesday."
+      body: |-
+        It looks like everything by December.
+
+        Most careers aren't built in big leaps. They're built on small, boring, repeatable steps:
+        • One skill a month
+        • One good conversation a week
+        • One honest review a quarter
+
+        If you're moving slowly, you're still moving. Keep walking.
+      hashtags: ["Consistency", "GrowthMindset", "CareerGrowth", "Motivation", "PersonalDevelopment"]
+    instagram:
+      hook: "Feeling slow? You're still moving 🐌"
+      body: |-
+        Small steps still take you somewhere.
+        Don't compare your pace to anyone's.
+
+        Save this for the days it feels like nothing is happening 💛
+      hashtags: ["motivation", "growthmindset", "consistency", "selfgrowth", "keepgoing"]
+
+  - id: fence-love-blooms
+    quote: "Boundaries aren't walls. They're the [fence that lets love bloom]."
+    pose: "waters a row of flowers beside a little white picket fence with a happy, calm expression"
+    background: "a cottage garden overflowing with roses, tulips and daisies along a white picket fence"
+    linkedin:
+      hook: "Saying 'I'm offline after 7' made me a better colleague, not a worse one."
+      body: |-
+        Boundaries aren't about keeping people out. They're how you show up fully when you're in.
+
+        Clear boundaries mean:
+        • People know when they'll get your best
+        • You stop resenting the work you love
+        • Your team learns it's okay to have them too
+
+        Protect your fence. Your garden grows better behind it.
+      hashtags: ["Boundaries", "WorkLifeBalance", "MentalHealth", "Leadership", "SelfCare"]
+    instagram:
+      hook: "Boundaries are a love language 🌷"
+      body: |-
+        Saying no to some things protects the people you say yes to.
+        A fence isn't a wall. It's how the garden grows.
+
+        Share this with someone learning to say no 💛
+      hashtags: ["boundaries", "selflove", "healing", "mentalhealth", "relationships"]
+
+  - id: treated-people
+    quote: "Deadlines end. [How you treated people] stays."
+    pose: "closes a tiny laptop with a relieved smile as three small hedgehog teammates cheer and high-five beside him"
+    background: "a cosy treehouse office at golden dusk with fairy lights and a big round window"
+    linkedin:
+      hook: "I can't remember a single deadline from 5 years ago. I remember exactly how my manager spoke to me during them."
+      body: |-
+        Pressure reveals leadership.
+
+        Did you snap, or did you steady the room?
+        Did you blame, or did you shield?
+        Did you thank the team when it was done?
+
+        The project ships and is forgotten. The way you made people feel doesn't.
+      hashtags: ["Leadership", "Management", "WorkplaceCulture", "TeamWork", "EmotionalIntelligence"]
+    instagram:
+      hook: "The deadline will pass. Their memory of you won't ⏳"
+      body: |-
+        Be kind on the busy days too.
+        That's when it matters most.
+
+        Tag your team 💛
+      hashtags: ["worklife", "leadership", "teamwork", "kindness", "corporatelife"]
+
+  - id: not-whole-life
+    quote: "Breathe. This moment is [not your whole life]."
+    pose: "sits at the end of a wooden pier with eyes closed, taking a slow deep breath, tiny smile"
+    background: "a calm lake at sunset with dandelion seeds floating in the warm air and pastel clouds"
+    linkedin:
+      hook: "The presentation that went wrong is not your career."
+      body: |-
+        Bad meetings, rejected proposals, a tough review: they feel enormous in the moment.
+
+        Zoom out:
+        • Will this matter in 5 years?
+        • What's one thing I learned?
+        • What's the next small step?
+
+        Breathe. This is a chapter, not the whole book.
+      hashtags: ["Resilience", "MentalHealth", "Mindfulness", "CareerAdvice", "StressManagement"]
+    instagram:
+      hook: "Having a hard day? Pause here for a second 🌅"
+      body: |-
+        Inhale. Exhale.
+        This feeling is real, but it is not forever.
+        This moment is not your whole life.
+
+        Send this to someone who needs it today 💛
+      hashtags: ["breathe", "anxietyrelief", "mentalhealth", "mindfulness", "healing"]
+
+  - id: real-yes
+    quote: "Say no to some things, so you can say a [real yes] to [what matters]."
+    pose: "holds a single daisy close to his heart with a gentle smile, a tidy pile of papers set aside next to him"
+    background: "a quiet sunny corner of a meadow with a tree stump, wildflowers and butterflies"
+    linkedin:
+      hook: "Every 'yes' to the wrong meeting is a 'no' to your real work."
+      body: |-
+        The most effective people I know aren't faster. They're choosier.
+
+        Before saying yes, ask:
+        • Does this move my top priority forward?
+        • Am I the right person, or just the available one?
+        • What will I drop to make room?
+
+        A clear no makes your yes worth something.
+      hashtags: ["Productivity", "Focus", "Leadership", "TimeManagement", "Priorities"]
+    instagram:
+      hook: "Saying no is self-respect 🌼"
+      body: |-
+        You can't hold everything.
+        Put some things down so you can hold what matters.
+
+        Save this for when you need permission to say no 💛
+      hashtags: ["selfrespect", "boundaries", "selfcare", "priorities", "mindset"]
