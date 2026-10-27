@@ -34,7 +34,7 @@ class Layout:
 LAYOUTS = {
     "linkedin_3x4": Layout(size=(1080, 1440), text_top=110, text_bottom=610, footer_center_y=1385),
     "instagram_feed_4x5": Layout(size=(1080, 1350), text_top=85, text_bottom=560, footer_center_y=1297),
-    "instagram_story_9x16": Layout(size=(1080, 1920), text_top=300, text_bottom=930, footer_center_y=1690),
+    "instagram_story_9x16": Layout(size=(1080, 1920), text_top=300, text_bottom=900, footer_center_y=990),
 }
 
 # Which illustration each output is cut from.
@@ -156,7 +156,8 @@ def _footer(img, layout, text):
 
 def render(illustration_path, quote, output_name, footer, seed):
     layout = LAYOUTS[output_name]
-    img = _cover(Image.open(illustration_path).convert("RGB"), layout.size).convert("RGBA")
+    art = illustration_path if isinstance(illustration_path, Image.Image) else Image.open(illustration_path)
+    img = _cover(art.convert("RGB"), layout.size).convert("RGBA")
     _haze(img, layout)
 
     words = parse_quote(quote)
@@ -203,3 +204,29 @@ def render(illustration_path, quote, output_name, footer, seed):
 
     _footer(img, layout, footer)
     return img.convert("RGB")
+
+
+def extend_sky(img, ratio=9 / 16, feather=160):
+    """Make a taller frame from 3:4 art by adding soft sky above it.
+
+    Each column's colour comes from the art's own top edge, heavily blurred,
+    so the new sky reads as a smooth watercolour wash rather than a stretch.
+    """
+    img = img.convert("RGB")
+    w, h = img.size
+    new_h = round(w / ratio)
+    extra = new_h - h
+    if extra <= 0:
+        return img
+    edge = img.crop((0, 0, w, 24)).resize((w, 1), Image.LANCZOS)
+    sky = edge.resize((w, extra + feather), Image.BILINEAR).filter(ImageFilter.GaussianBlur(40))
+    # Fade slightly lighter towards the top, like the rest of the sky wash.
+    lighten = Image.new("RGB", sky.size, (253, 249, 240))
+    fade = Image.linear_gradient("L").resize(sky.size).transpose(Image.FLIP_TOP_BOTTOM)
+    sky = Image.composite(lighten, sky, fade.point(lambda v: int(v * 0.35)))
+    canvas = Image.new("RGB", (w, new_h))
+    canvas.paste(sky, (0, 0))
+    mask = Image.linear_gradient("L").resize((w, feather))
+    canvas.paste(img.crop((0, 0, w, feather)), (0, extra), mask)
+    canvas.paste(img.crop((0, feather, w, h)), (0, extra + feather))
+    return canvas

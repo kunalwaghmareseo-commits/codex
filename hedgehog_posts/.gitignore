@@ -1,3 +1,2 @@
-.art/
-preview/
 __pycache__/
+*.png

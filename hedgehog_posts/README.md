@@ -1,41 +1,29 @@
-# Daily hedgehog quotes: Dhwaja23 (Instagram) + Quiamo (LinkedIn)
+# Hedgehog quote posts: Quiamo (LinkedIn) + Dhwaja23 (Instagram)
 
-Every morning a GitHub Action:
+These are made for posting by hand. The finished files are in `../manual_posts/`:
 
-1. Takes the next quote from `quotes.yaml`.
-2. Asks Gemini for two text-free illustrations of the hedgehog (3:4 and 9:16), built from the quote's **pose** and **background** plus the shared character and style in `config.yaml`. `reference/hedgehog_reference.jpg` is sent along so the character stays consistent.
-3. Letters the quote on top with coloured brush highlights for the `[bracketed]` phrases and adds a **Quiamo.com** footer (`compose.py`). The program does the lettering rather than Gemini so the spelling is always right.
-4. Waits for the day's random time slot between **08:10 and 08:45 IST**, never the same as the day before.
-5. Posts:
-
-| Where | Format | Size |
+| File | Use it for | Size |
 |---|---|---|
-| LinkedIn, Quiamo page | 3:4 image + LinkedIn post (hook, body, ≤5 hashtags) | 1080×1440 |
-| Instagram, Dhwaja23 feed | 4:5 image + Instagram caption (hook, body, ≤5 hashtags) | 1080×1350 |
-| Instagram, Dhwaja23 story | 9:16 image | 1080×1920 |
+| `NN_<quote>/linkedin_3x4.jpg` | Quiamo LinkedIn page post | 1080×1440 |
+| `NN_<quote>/instagram_feed_4x5.jpg` | Dhwaja23 feed post | 1080×1350 |
+| `NN_<quote>/instagram_story_9x16.jpg` | Dhwaja23 story or reel cover | 1080×1920 |
+| `ALL_POSTS.txt` | Every LinkedIn post and Instagram caption, with a hook and at most 5 hashtags | |
 
-Instagram's API rejects feed photos taller than 4:5, so the 9:16 version goes to Stories.
+Instagram feed posts can't be taller than 4:5, so use the 9:16 image for Stories.
 
-`samples/` has example output and captions.
+## How they're made
 
-## One-time setup (repo → Settings → Secrets and variables → Actions)
+- `quotes.yaml` holds each quote, kept separate from the hedgehog's **pose** and **background**, plus the LinkedIn and Instagram copy. Phrases in `[brackets]` get a coloured brush highlight.
+- `config.yaml` holds the shared character and art style, so the same hedgehog is described in every prompt.
+- `art/` holds the text-free illustrations, generated with Gemini.
+- `compose.py` letters the quote and adds the **Quiamo.com** footer. The program does the lettering rather than the image model, so the spelling is always right.
 
-| Secret | What it is |
-|---|---|
-| `GEMINI_API_KEY` | From https://aistudio.google.com/apikey. Image generation is billed on the Gemini API (roughly US$0.04 per image, 2 images a day). |
-| `IG_USER_ID` | Dhwaja23's Instagram business account id: `17841467124393420` |
-| `IG_ACCESS_TOKEN` | Long-lived Instagram Graph API token with `instagram_content_publish` permission. If it is an "Instagram Login" token rather than a Facebook Page token, also set the variable `IG_GRAPH_HOST` = `graph.instagram.com`. |
-| `LINKEDIN_ACCESS_TOKEN` | Token from a LinkedIn developer app with `w_organization_social`, made by an admin of the Quiamo page. These tokens expire after 60 days, so refresh them. |
-| `LINKEDIN_ORG_ID` | The number in the Quiamo admin URL: `linkedin.com/company/<ID>/admin` |
+## Rebuild or add quotes
 
-Optional variables: `GEMINI_IMAGE_MODEL` (default `gemini-2.5-flash-image`), `LINKEDIN_API_VERSION` (default `202509`, YYYYMM).
+```
+pip install -r requirements.txt
+python build_posts.py                # rebuild everything from art/
+python build_posts.py --generate     # make art for new quotes with the Gemini API
+```
 
-If a token is missing, that network is skipped and the rest still posts.
-
-## Everyday use
-
-- **Add or edit quotes:** edit `quotes.yaml`. Each entry has `quote`, `pose`, `background`, and separate `linkedin` / `instagram` hook, body and hashtags.
-- **Post right now:** Actions → *Daily hedgehog quote* → *Run workflow* → tick *post_now*.
-- **Preview locally without API calls:**
-  `python run_daily.py preview --quote own-garden --art-3x4 art.png --art-9x16 art_tall.png --out preview`
-- **Re-runs are safe.** `state.json` records what was posted each day, so a re-run only retries the networks that failed.
+`--generate` needs a `GEMINI_API_KEY` from https://aistudio.google.com/apikey. If a quote has 3:4 art but no 9:16 art, the story version is made by extending the sky above the 3:4 art.

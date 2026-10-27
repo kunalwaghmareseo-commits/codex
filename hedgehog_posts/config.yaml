@@ -18,13 +18,15 @@ formats:
     aspect_ratio: "3:4"
     composition: >-
       The hedgehog and scene occupy the bottom 55% of the image; the top 45% is
-      an open pale blue-to-cream sky with a few soft clouds and plenty of empty space.
+      open pale blue-to-cream sky with a few soft clouds (or, for indoor scenes,
+      a soft plain cream wall) with plenty of empty space.
   story_9x16:
     aspect_ratio: "9:16"
     composition: >-
       Tall vertical frame. The hedgehog and scene occupy the bottom half of the
-      image, kept away from the very bottom edge; the top half is an open pale
-      blue-to-cream sky with a few soft clouds and plenty of empty space.
+      image, kept away from the very bottom edge; the top half is open pale
+      blue-to-cream sky with a few soft clouds (or, for indoor scenes, a soft
+      plain cream wall) with plenty of empty space.
 
 # Posting window, India time. One slot is picked per day, never the same as
 # the day before.
